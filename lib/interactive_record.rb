@@ -65,6 +65,5 @@ class InteractiveRecord
     end
 
     result
-    binding.
   end
 end
