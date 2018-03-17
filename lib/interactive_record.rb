@@ -45,6 +45,6 @@ class InteractiveRecord
   end
 
   def save
-    sql = "INSERT INTO #{self.class.table_name}"
+    sql = "INSERT INTO #{self.class.table_name} (#{col_names_for_insert}) VALUES (#{values_for_insert})"
   end
 end
