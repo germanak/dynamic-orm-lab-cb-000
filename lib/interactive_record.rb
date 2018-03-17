@@ -57,6 +57,6 @@ class InteractiveRecord
   end
 
   def self.find_by(options)
-    sql = ""
+    sql = "SELECT * FROM #{self.table_name} WHERE #{options.keys} = #{options.values}"
   end
 end
