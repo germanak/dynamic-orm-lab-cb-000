@@ -61,7 +61,7 @@ class InteractiveRecord
 
     options.each do |property, value|
       sql = "SELECT * FROM #{self.table_name} WHERE #{property} = '#{value}' LIMIT 1"
-      result << DB[:conn].execute(sql)
+      result << DB[:conn].execute(sql).first
       binding.pry
     end
 
