@@ -58,8 +58,9 @@ class InteractiveRecord
 
   def self.find_by(options={})
     result = []
-    option.each do |property, values|
-    sql = "SELECT * FROM #{self.table_name} WHERE #{options.keys} = #{options.values}"
+    option.each do |property, value|
+      sql = "SELECT * FROM #{self.table_name} WHERE #{property} = #{value}"
+    end
     result << DB[:conn].execute(sql)
   end
 end
